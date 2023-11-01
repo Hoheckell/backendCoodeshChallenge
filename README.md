@@ -10,7 +10,7 @@ Projeto de Backend elaborado como prova de conhecimentos para Coodesh, sendo com
 - NestJS https://nestjs.com/
 - mongoose https://mongoosejs.com/
 - swagger https://swagger.io/
-
+Link da apresentação: https://www.loom.com/embed/10d9e7eecf6848aeb84f9e9248a8aac1
 # instalação
 - É necessário configurar a variável de ambiente MONGODB_URI no arquivo .env
 
