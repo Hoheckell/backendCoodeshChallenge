@@ -20,14 +20,29 @@ export class LaunchesRepository {
   ): Promise<LaunchesPaginatedDto> {
     const paginatedResult: LaunchesPaginatedDto = new LaunchesPaginatedDto();
     const updated = await this.wasUpdatedToday();
-
+    let query = {};
     if (!updated) {
       await this.updateDatabase();
     }
-
-    const query = launchSearchDto?.search
-      ? { $text: { $search: launchSearchDto.search } }
-      : {};
+    if (
+      launchSearchDto?.search?.toLowerCase() === 'sucesso' ||
+      launchSearchDto?.search?.toLowerCase() === 'falha'
+    ) {
+      query = launchSearchDto?.search
+        ? {
+            success: {
+              $eq:
+                launchSearchDto.search.toLowerCase() === 'sucesso'
+                  ? true
+                  : false,
+            },
+          }
+        : {};
+    } else {
+      query = launchSearchDto?.search
+        ? { $text: { $search: launchSearchDto.search } }
+        : {};
+    }
 
     paginatedResult.results = await this.launchModel
       .find(query)

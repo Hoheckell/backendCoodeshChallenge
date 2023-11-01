@@ -128,20 +128,17 @@ export class LaunchesService {
   }
 
   random_rgba() {
-    const o = Math.round;
-    const r = Math.random;
-    const s = 236;
-    return (
-      'rgba(' +
-      o(r() * s) +
-      ',' +
-      o(r() * s) +
-      ',' +
-      o(r() * s) +
-      ',' +
-      r().toFixed(1) +
-      ')'
-    );
+    const colors = [
+      'rgba(0, 0, 0, 1)',
+      'rgba(245, 124, 0, 1)',
+      'rgba(18, 103, 252, 1)',
+      'rgba(217, 217, 217, 1)',
+      'rgba(250, 243, 221, 1)',
+      'rgba(255, 159, 64, 1)',
+    ];
+    const num = Math.floor(Math.random() * 6);
+
+    return colors[num];
   }
 
   getReusedRocketsLaunches(launches: Launch[]): Map<string, number> {

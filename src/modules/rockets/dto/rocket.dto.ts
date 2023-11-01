@@ -1,4 +1,3 @@
-import { Prop } from '@nestjs/mongoose';
 import { Diameter } from '../entities/Diameter';
 import { Engine } from '../entities/Engine';
 import { FirstStage } from '../entities/FirstStage';

@@ -3,7 +3,6 @@ import { LaunchesRepository } from '../repositories/launches.repository';
 import { createMock } from '@golevelup/ts-jest';
 import { RocketsService } from '../../rockets/services/rockets.service';
 import { LaunchSearchDto } from '../dto/launch-search.dto';
-import { Launch } from '../entities/Launch.schema';
 import { Rocket } from '../../rockets/entities/Rocket.schema';
 import { LaunchStub } from '../../../../test/stubs/launch.stub';
 
