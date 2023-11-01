@@ -1,8 +1,12 @@
 import { Injectable } from '@nestjs/common';
+import { MessageDto } from './dto/message.dto';
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+  getMessage(): MessageDto {
+    const response: MessageDto = {
+      message: 'Fullstack Challenge 🏅 - Space X API',
+    };
+    return response;
   }
 }
